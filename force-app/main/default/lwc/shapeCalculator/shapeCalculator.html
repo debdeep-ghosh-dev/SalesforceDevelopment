@@ -1,0 +1,89 @@
+<template>
+    <template if:true={showShapeButtons}>
+        <lightning-card title="Shape Calculator">
+            <div class="slds-p-around_medium">
+                <p class="slds-text-heading_medium">Click on the Shape to calculate Area</p>
+            </div>
+                <lightning-button label="Square" onclick={handleSquareClick} class="slds-m-around_small"></lightning-button>
+                <lightning-button label="Rectangle" onclick={handleRectangleClick} class="slds-m-around_small"></lightning-button>
+                <lightning-button label="Circle" onclick={handleCircleClick} class="slds-m-around_small"></lightning-button>
+        </lightning-card>
+    </template>
+    <template if:true={showSquareInputs}>
+        <lightning-card title="Square Area Calculator">
+            <div class="slds-p-around_medium">
+                <lightning-input 
+                    label="Enter Side Length" 
+                    type="number" 
+                    onchange={handleSideChange}>
+                </lightning-input>
+                <div class="slds-m-around_medium slds-text-align_center">  
+                    <lightning-button 
+                        label="Calculate Area" 
+                        onclick={calculateSquareArea}>
+                    </lightning-button>
+                    <lightning-button 
+                        label="Back" 
+                        onclick={handleBack}>
+                    </lightning-button>
+                </div>
+                <lightning-layout-item size="12" padding="around-medium">
+                    <p class="slds-m-top_medium slds-align_absolute-center">{squareAreaOutput}</p>
+                </lightning-layout-item>
+            </div>
+        </lightning-card>
+    </template>
+    <template if:true={showRectangleInputs}>
+        <lightning-card title="Rectangle Area Calculator">
+            <div class="slds-p-around_medium">
+                <lightning-input 
+                    label="Enter Length" 
+                    type="number" 
+                    onchange={handleLengthChange}>
+                </lightning-input>
+                <lightning-input 
+                    label="Enter Width" 
+                    type="number" 
+                    onchange={handleWidthChange}>
+                </lightning-input>
+                <div class="slds-m-around_medium slds-text-align_center">  
+                    <lightning-button 
+                        label="Calculate Area" 
+                        onclick={calculateRectangleArea}>
+                    </lightning-button>
+                    <lightning-button 
+                        label="Back" 
+                        onclick={handleBack}>
+                    </lightning-button>
+                </div>
+                <lightning-layout-item size="12" padding="around-medium">
+                    <p class="slds-m-top_medium slds-align_absolute-center">{rectangleAreaOutput}</p>
+                </lightning-layout-item>
+            </div>
+        </lightning-card>
+    </template>
+    <template if:true={showCircleInputs}>
+        <lightning-card title="Circle Area Calculator"> 
+            <div class="slds-p-around_medium">
+                <lightning-input 
+                    label="Enter Radius" 
+                    type="number" 
+                    onchange={handleRadiusChange}>
+                </lightning-input>
+                <div class="slds-m-around_medium slds-text-align_center">  
+                    <lightning-button 
+                        label="Calculate Area" 
+                        onclick={calculateCircleArea}>
+                    </lightning-button>
+                    <lightning-button 
+                        label="Back" 
+                        onclick={handleBack}>
+                    </lightning-button>
+                </div>
+                <lightning-layout-item size="12" padding="around-medium">
+                    <p class="slds-m-top_medium slds-align_absolute-center">{circleAreaOutput}</p>
+                </lightning-layout-item>
+            </div>
+        </lightning-card>
+    </template>
+</template>

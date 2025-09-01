@@ -1,0 +1,47 @@
+<template>
+    <template if:true={show}>   
+        <lightning-card>
+            <h1 class="slds-text-heading_medium slds-text-align_center" style="color: rgb(2, 2, 27);">Enter Employee Information</h1>
+            <div class="slds-m-around_medium">
+                <lightning-input 
+                    label="Enter Name" 
+                    value={name} 
+                    placeholder="Enter Name"
+                    onchange={handleNameChange}>
+                </lightning-input>
+
+                <lightning-input 
+                    label="Enter Age" 
+                    value={age}
+                    placeholder="Enter Age"
+                    onchange={handleAgeChange}>
+                </lightning-input>
+
+                <lightning-input 
+                    label="Enter Salary" 
+                    value={salary}
+                    placeholder="Enter Salary"
+                    onchange={handleSalaryChange}>
+                </lightning-input>
+                
+                <div class="slds-m-around_medium slds-text-align_center">       
+                    <lightning-button label="Submit" onclick={handleSubmit}></lightning-button>
+                </div>
+            </div>
+        </lightning-card>
+    </template>
+
+    <template if:false={show}>
+        <lightning-card title="Show Employee Details">
+            <div class="slds-m-around_medium">
+                <p> Name: {name}</p>
+                <p> Age: {age}</p>
+                <p> Salary: {salary}</p>
+                
+                <div class="slds-m-around_medium slds-text-align_center">
+                    <lightning-button label="Back" onclick={handleBack}></lightning-button>
+                </div>
+            </div>
+        </lightning-card>
+    </template>
+</template>

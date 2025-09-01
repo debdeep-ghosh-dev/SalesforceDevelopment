@@ -1,0 +1,35 @@
+<template>
+    <lightning-card title="Simple Interest Calculator" icon-name="custom:custom14">
+        <div class="slds-p-around_medium">
+            <lightning-input 
+                label="Principal" 
+                type="number" 
+                onchange={principalChangeHandler}>
+            </lightning-input>
+
+            <lightning-input 
+                label="Rate (%)" 
+                type="number" 
+                onchange={rateChangeHandler}>
+            </lightning-input>
+
+            <lightning-input 
+                label="Time (Years)" 
+                type="number" 
+                onchange={timeChangeHandler}>
+            </lightning-input>
+
+            <div class="slds-m-around_medium slds-text-align_center">  
+                <lightning-button 
+                    label="Calculate" 
+                    onclick={calculateSIHandler}
+                ></lightning-button>
+            </div>
+
+            <!-- show the output -->
+            <lightning-layout-item size="12" padding="around-medium">
+                <p class="slds-m-top_medium slds-align_absolute-center">{curentOutput}</p>
+            </lightning-layout-item>
+        </div>
+    </lightning-card>
+</template>
