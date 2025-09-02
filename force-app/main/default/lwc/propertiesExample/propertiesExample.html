@@ -1,0 +1,18 @@
+<template>
+    <table style="background: white">
+        <tr>
+            <td>
+                Reactive Private Property
+                <lightning-input label="Enter Value" value={reactiveProperty} onchange={handleReactive}></lightning-input>
+                value: {reactiveProperty}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Non-Reactive Private Property
+                <lightning-input label="Enter Value" value={nonReactiveProperty} onchange={handleNonReactive}></lightning-input>
+                value: {result}
+            </td>
+        </tr>
+    </table>
+</template>

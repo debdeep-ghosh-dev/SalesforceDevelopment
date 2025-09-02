@@ -1,0 +1,11 @@
+<template>
+	<ul>
+		<template for:each={empDetails} for:item="emp">
+			<li key={emp.id}>
+				Name: {emp.Name}
+				Age: {emp.Age}
+				Email: {emp.Email}
+			</li>
+		</template>		
+	</ul>
+</template>
