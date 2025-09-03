@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title="Enter a message" icon-name="custom:custom14">
+        <div class="slds-m-around_medium">
+            <lightning-input label="Enter Message" value={inputMessage} placeholder="Enter a Message" onchange={handleInputChange}></lightning-input>
+        </div>
+        <div class="slds-m-around_medium">
+            <c-child-comp></c-child-comp>
+        </div>
+    </lightning-card>
+</template>
